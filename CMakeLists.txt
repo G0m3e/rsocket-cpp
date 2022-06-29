@@ -7,6 +7,10 @@ if (NOT DEFINED CPACK_GENERATOR)
 endif()
 include(CPack)
 
+if(APPLE)
+set(CMAKE_PREFIX_PATH 
+"/User/singhyang/local/installed")
+endif()
 # CMake modules.
 set(CMAKE_MODULE_PATH
   "${CMAKE_SOURCE_DIR}/cmake/"

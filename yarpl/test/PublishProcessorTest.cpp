@@ -123,7 +123,7 @@ TEST(PublishProcessorTest, OnNextSlowSubscriberTest) {
   EXPECT_TRUE(subscriber2->isError());
   EXPECT_EQ(
       subscriber2->exceptionWrapper().type(),
-      typeid(MissingBackpressureException));
+      &typeid(MissingBackpressureException));
 }
 
 TEST(PublishProcessorTest, CancelTest) {
@@ -164,7 +164,7 @@ TEST(PublishProcessorTest, OnMultipleSubscribersMultithreadedWithErrorTest) {
         EXPECT_TRUE(subscriber->isError());
         EXPECT_EQ(
             subscriber->exceptionWrapper().type(),
-            typeid(MissingBackpressureException));
+            &typeid(MissingBackpressureException));
       }
       ++threadsDone;
     }));

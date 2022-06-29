@@ -56,7 +56,6 @@ endif ()
 
 # Enable ASAN by default on debug macOS builds.
 if (APPLE)
-  set(OPENSSL_ROOT_DIR "/usr/local/opt/openssl")
   if ("${BUILD_TYPE_LOWER}" MATCHES "debug")
     if (${CMAKE_CXX_COMPILER_ID} MATCHES Clang)
       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,integer -fno-sanitize=unsigned-integer-overflow")
